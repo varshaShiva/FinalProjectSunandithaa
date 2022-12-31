@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+  
+<body>
+    <div class="ground">
+        <div id="circle" onclick="count()"></div>
+    </div>
+    <div class="details">
+        <img src="https://png.pngitem.com/pimgs/s/483-4839053_ftestickers-clipart-stars-moons-hanging-gold-gold-hd.png">
+        <h1>Tap The Baby</h1>
+        <h3>Click on a difficulty to start the game</h3>
+        <div class="level">
+            <button onclick="easy()">EASY</button>
+            <button onclick="medium()">MEDIUM</button>
+            <button onclick="hard()">HARD</button>
+        </div>
+        <div class="display_score">
+            <h2>Score</h2>
+            <h2 id="score">0</h2>
+        </div>
+        <button onclick="restart()">RESTART</button>
+    </div>
+  
+    <script>
+  
+        // Setting the level to Easy by having the
+        // duration of the whole animation to the maximum 
+        function easy() {
+            document.getElementById('circle')
+                .style.animationDuration = '20s';
+            document.getElementById('circle')
+                .className = 'crcl';
+        }
+  
+        // Setting the level to Medium by having the
+        // duration of the whole animation to the maximum 
+        function medium() {
+            document.getElementById('circle')
+                .style.animationDuration = '15s';
+            document.getElementById('circle')
+                .className = 'crcl';
+        }
+  
+        // Setting the level to Hard by having the
+        // duration of the whole animation to the maximum
+        function hard() {
+            document.getElementById('circle')
+                .style.animationDuration = '12s';
+            document.getElementById('circle')
+                .className = 'crcl';
+        }
+  
+        let cnt = 0;
+  
+        // Function to count the number of taps
+        // and display the score
+        function count() {
+            cnt = parseInt(1) + parseInt(cnt);
+            var scr = document.getElementById('score');
+            scr.innerHTML = cnt;
+        }
+  
+        // Restart the game by refreshing the page
+        function restart() {
+            window.location.reload();
+        }
+    </script>
+</body>
+    
+</html>
